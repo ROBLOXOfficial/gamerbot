@@ -12,14 +12,14 @@ const config = require("./config.json");
 client.on("guildMemberAdd", function(member) {
 	member.guild.channels.find("name", "general").sendMessage(member.toString() + " Welcome to the support server!");
 	
-	member.addRole(member.guild.roles.find("name", "Member"));
+	member.addRole(member.guild.roles.find("name", "Gamer"));
 });
 client.on("ready", () => {
   // This event will run if the bot starts, and logs in, successfully.
   console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
   // Example of changing the bot's playing game to something useful. `client.user` is what the
   // docs refer to as the "ClientUser".
-  client.user.setGame(`	Say +help To get started`);
+  client.user.setGame(`	Say !help To get started`);
 });
 
 client.on("guildCreate", guild => {
@@ -44,7 +44,7 @@ client.on("message", async message => {
   
   // Also good practice to ignore any message that does not start with our prefix, 
   // which is set in the configuration file.
-  if(message.content.indexOf(config.prefix) !== 0) return;
+  if(message.content.indexOf("!") !== 0) return;
   
   // Here we separate our "command" name, and our "arguments" for the command. 
   // e.g. if we have the message "+say Is this the real life?" , we'll get the following:
