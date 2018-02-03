@@ -1,6 +1,5 @@
 // Load up the discord.js library
 const Discord = require("discord.js");
-const TOKEN = "NDAyMDIyNjM0MTA5NTM0MjA4.DTysRQ.fUfIDn6b0yW2-GkPS4QCrFqFB10"
 // This is your client. Some people call it `bot`, some people call it `self`, 
 // some might call it `cootchie`. Either way, when you see `client.something`, or `bot.something`,
 // this is what we're refering to. Your client.
@@ -77,7 +76,7 @@ client.on("message", async message => {
     // This command must be limited to mods and admins. In this example we just hardcode the role names.
     // Please read on Array.some() to understand this bit: 
     // https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/some?
-    if(!message.member.roles.some(r=>["Owners"].includes(r.name)) )
+    if(!message.member.roles.some(r=>["banperm"].includes(r.name)) )
       return message.reply("Sorry, you don't have permissions to use this!");
     
     // Let's first check if we have a member and if we can kick them!
@@ -103,7 +102,7 @@ client.on("message", async message => {
   if(command === "ban") {
     // Most of this command is identical to kick, except that here we'll only let admins do it.
     // In the real world mods could ban too, but this is just an example, right? ;)
-    if(!message.member.roles.some(r=>["Owners"].includes(r.name)) )
+    if(!message.member.roles.some(r=>["banperm"].includes(r.name)) )
       return message.reply("Sorry, you don't have permissions to use this!");
     
     let member = message.mentions.members.first();
@@ -137,11 +136,11 @@ client.on("message", async message => {
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
 
-  if(command === "addbeta") {
+  if(command === "verify forza") {
 	  message.channel.sendMessage("⚠️ Please wait as we add the role ⚠️")
-	  message.member.addRole(message.member.guild.roles.find("name", "Beta Testers"));
+	  message.member.addRole(message.member.guild.roles.find("name", "Forza Verified"));
 	  message.channel.sendMessage("Succesful")
-	  message.author.sendMessage("You are a Beta Tester! Add the bot here https://discordapp.com/oauth2/authorize?client_id=401790916110712834&scope=bot&permissions=70380544")
+	  message.author.sendMessage("Thanks for verifing with Gamerbot, Made by <@281218998203580426>")
   }
 });
 
