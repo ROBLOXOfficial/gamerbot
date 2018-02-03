@@ -1,0 +1,14 @@
+{
+  "name": "burger-boyz",
+  "version": "1.0.0",
+  "description": "Yum Yum, Burgerz",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ultra Aviation",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.2.1"
+  }
+}
