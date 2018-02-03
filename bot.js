@@ -10,7 +10,7 @@ const config = require("./config.json");
 // config.token contains the bot's token
 // config.prefix contains the message prefix.
 client.on("guildMemberAdd", function(member) {
-	member.guild.channels.find("name", "general").sendMessage(member.toString() + " Welcome to the support server!");
+	member.guild.channels.find("name", "general").sendMessage(member.toString() + " Welcome to the gaming server!");
 	
 	member.addRole(member.guild.roles.find("name", "Gamer"));
 });
@@ -22,17 +22,6 @@ client.on("ready", () => {
   client.user.setGame(`	Say !help To get started`);
 });
 
-client.on("guildCreate", guild => {
-  // This event triggers when the bot joins a guild.
-  console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
-
-});
-
-client.on("guildDelete", guild => {
-  // this event triggers when the bot is removed from a guild.
-  console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
-
-});
 
 
 client.on("message", async message => {
