@@ -125,15 +125,15 @@ client.on("message", async message => {
   }
 
   if(command === "verify forza") {
-	  message.channel.sendMessage("⚠️ Please wait as we add the role ⚠️")
+	  message.reply("⚠️ Please wait as we add the role ⚠️")
 	  message.member.addRole(message.member.guild.roles.find("name", "Forza Verified"));
-	  message.channel.sendMessage("Succesful")
+	  message.reply("Succesful")
 	  message.author.sendMessage("Thanks for verifing with Gamerbot, Made by <@281218998203580426>")
   }
 	  if(command === "verify fsx") {
-	  message.channel.sendMessage("⚠️ Please wait as we add the role ⚠️")
+	 message.reply("⚠️ Please wait as we add the role ⚠️")
 	  message.member.addRole(message.member.guild.roles.find("name", "Flight Simulator Verified"));
-	  message.channel.sendMessage("Succesful")
+	  message.reply("Succesful")
 	  message.author.sendMessage("Thanks for verifing with Gamerbot, Made by <@281218998203580426>")
   }
 });
