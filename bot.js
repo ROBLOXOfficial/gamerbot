@@ -124,13 +124,13 @@ client.on("message", async message => {
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
 
-  if(command === "verify forza") {
+  if(command === "forza") {
 	  message.reply("⚠️ Please wait as we add the role ⚠️")
 	  message.member.addRole(message.member.guild.roles.find("name", "Forza Verified"));
 	  message.reply("Succesful")
 	  message.author.sendMessage("Thanks for verifing with Gamerbot, Made by <@281218998203580426>")
   }
-	  if(command === "verify fsx") {
+	  if(command === "fsx") {
 	 message.reply("⚠️ Please wait as we add the role ⚠️")
 	  message.member.addRole(message.member.guild.roles.find("name", "Flight Simulator Verified"));
 	  message.reply("Succesful")
